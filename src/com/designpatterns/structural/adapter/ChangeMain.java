@@ -1,8 +1,9 @@
-package com.designpatterns.structural.adapter.payment;
+package com.designpatterns.structural.adapter;
 
 import com.designpatterns.structural.adapter.Charge;
 import com.designpatterns.structural.adapter.EasyPaymentAdapter;
 import com.designpatterns.structural.adapter.TopPaymentAdapter;
+import com.designpatterns.structural.adapter.payment.TopPayment;
 
 public class ChangeMain {
 
