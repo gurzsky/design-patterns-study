@@ -1,4 +1,6 @@
-package com.designpatterns.creational.factorymethod;
+package com.designpatterns.creational.factorymethod.caixa;
+
+import com.designpatterns.creational.factorymethod.BankSlip;
 
 public class BankCaixaSlipThirtyDays extends BankSlip {
     public BankCaixaSlipThirtyDays(float price) {

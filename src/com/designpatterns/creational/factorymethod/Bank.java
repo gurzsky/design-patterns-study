@@ -1,14 +1,9 @@
 package com.designpatterns.creational.factorymethod;
 
-public class BankCaixa {
-
-    private BankSlipSimpleFactory bankSlipSimpleFactory;
-    public BankCaixa(BankSlipSimpleFactory bankSlipSimpleFactory) {
-        this.bankSlipSimpleFactory = bankSlipSimpleFactory;
-    }
+abstract public class Bank {
 
     public BankSlip generateBankSlip(int dueDate, float price) throws Exception {
-        BankSlip bankSlip = bankSlipSimpleFactory.createBankSlip(dueDate, price);
+        BankSlip bankSlip = this.createBankSlip(dueDate, price);
 
         System.out.println("BankSlip successful created with value of " + price);
         System.out.println("Tax: " + bankSlip.taxCalculate());
@@ -17,4 +12,7 @@ public class BankCaixa {
 
         return bankSlip;
     }
+    // createBankSlip is the Factory Method
+   abstract public BankSlip createBankSlip(int dueDate, float price) throws Exception;
+
 }
