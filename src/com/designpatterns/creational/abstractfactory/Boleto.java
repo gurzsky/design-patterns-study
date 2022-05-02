@@ -1,13 +1,13 @@
 package com.designpatterns.creational.abstractfactory;
 
-abstract public class BankSlip {
+abstract public class Boleto {
 
     protected float price;
     protected float tax;
     protected float discount;
     protected float fees;
 
-    public BankSlip(float price) {
+    public Boleto(float price) {
         this.price = price;
     }
 
