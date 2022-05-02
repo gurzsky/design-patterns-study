@@ -1,4 +1,10 @@
 package com.designpatterns.creational.abstractfactory.bancodobrasil;
 
-public class BBMulta {
+import com.designpatterns.creational.abstractfactory.Multa;
+
+public class BBMulta implements Multa {
+    @Override
+    public float getMulta() {
+        return 0.02f;
+    }
 }

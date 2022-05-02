@@ -1,4 +1,11 @@
 package com.designpatterns.creational.abstractfactory.bancodobrasil;
 
-public class BBJuros {
+import com.designpatterns.creational.abstractfactory.Juros;
+
+public class BBJuros implements Juros {
+
+    @Override
+    public float getJuros() {
+        return 0.03f;
+    }
 }
