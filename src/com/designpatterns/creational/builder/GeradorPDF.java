@@ -17,23 +17,6 @@ public class GeradorPDF {
     private String pageColor = "ffffff";
     private String encode = "UTF-8";
 
-    public GeradorPDF(String pageOrientation, String unit, int pageSizeX, int pageSizeY, int marginTop, int marginRight, int marginBottom, int marginLeft, boolean hasHeader, int headerHeight, boolean hasFooter, int footerHeight, String pageColor, String encode) {
-        this.pageOrientation = pageOrientation;
-        this.unit = unit;
-        this.pageSizeX = pageSizeX;
-        this.pageSizeY = pageSizeY;
-        this.marginTop = marginTop;
-        this.marginRight = marginRight;
-        this.marginBottom = marginBottom;
-        this.marginLeft = marginLeft;
-        this.hasHeader = hasHeader;
-        this.headerHeight = headerHeight;
-        this.hasFooter = hasFooter;
-        this.footerHeight = footerHeight;
-        this.pageColor = pageColor;
-        this.encode = encode;
-    }
-
     public String getPageOrientation() {
         return pageOrientation;
     }
