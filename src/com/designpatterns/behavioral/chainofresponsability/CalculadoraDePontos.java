@@ -4,20 +4,18 @@ public class CalculadoraDePontos {
 
     public int calcularPontosDoPedido(Pedido pedido, int dia) {
 
-        int pontos;
-        if (pedido.getValor() >= 70) {
-            pontos = (int) (pedido.getValor() / 5);
-        } else if (pedido.getValor() >= 40) {
-            pontos = (int) (pedido.getValor() / 7);
-        } else if (pedido.getValor() >= 20) {
-            pontos = (int) (pedido.getValor() / 10);
-        } else {
-            return 0;
-        }
+        Pontos70Reais pontos70Reais = new Pontos70Reais();
+        Pontos40Reais pontos40Reais = new Pontos40Reais();
+        Pontos20Reais pontos20Reais = new Pontos20Reais();
+        NenhumPonto nenhumPonto = new NenhumPonto();
+
+        pontos70Reais.setProximo(pontos40Reais);
+        pontos40Reais.setProximo(pontos20Reais);
+        pontos20Reais.setProximo(nenhumPonto);
 
         if (dia >= 16 && dia <=31)
-            return pontos * 2;
+            return pontos70Reais.calcularPontos(pedido) * 2;
 
-        return pontos;
+        return pontos70Reais.calcularPontos(pedido);
     }
 }
