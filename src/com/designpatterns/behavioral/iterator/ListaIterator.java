@@ -2,13 +2,13 @@ package com.designpatterns.behavioral.iterator;
 
 public class ListaIterator implements Iterator{
 
-    private Integer[] lista;
+    private Lista lista;
     private int indice = 0;
     private int tamanho;
 
-    public ListaIterator(Integer[] lista) {
+    public ListaIterator(Lista lista) {
         this.lista = lista;
-        this.tamanho = lista.length;
+        this.tamanho = lista.getTamanho();
     }
 
     @Override
@@ -20,7 +20,7 @@ public class ListaIterator implements Iterator{
 
     @Override
     public Integer next() {
-        Integer item = this.lista[this.indice];
+        Integer item = this.lista.getItem(this.indice);
         this.indice++;
         return item;
     }
