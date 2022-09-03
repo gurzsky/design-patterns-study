@@ -5,13 +5,13 @@ public class Usuario {
     private String nome;
     private String cpf;
     private int idade;
-    private PessoaFisicaReceitaFederal pessoaFisica;
+    private ReceitaFederalInterface pessoaFisica;
 
     public Usuario(String nome, String cpf, int idade) {
         this.nome = nome;
         this.cpf = cpf;
         this.idade = idade;
-        this.pessoaFisica = new PessoaFisicaReceitaFederal(cpf);
+        this.pessoaFisica = new PessoaFisicaReceitaFederalProxy(cpf);
     }
 
     public boolean validaNome() {

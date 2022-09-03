@@ -9,18 +9,27 @@ public class PessoaFisicaReceitaFederalProxy implements ReceitaFederalInterface 
         this.cpf = cpf;
     }
 
+    private void criarPessoaFisicaReceitaFederal() {
+        if (pessoaFisicaRF == null) {
+            this.pessoaFisicaRF = new PessoaFisicaReceitaFederal(this.cpf);
+        }
+    }
+
     @Override
     public boolean isCpfAtivo() {
-        return false;
+        this.criarPessoaFisicaReceitaFederal();
+        return this.pessoaFisicaRF.isCpfAtivo();
     }
 
     @Override
     public String getNome() {
-        return null;
+        this.criarPessoaFisicaReceitaFederal();
+        return this.pessoaFisicaRF.getNome();
     }
 
     @Override
     public int getIdade() {
-        return 0;
+        this.criarPessoaFisicaReceitaFederal();
+        return this.getIdade();
     }
 }
