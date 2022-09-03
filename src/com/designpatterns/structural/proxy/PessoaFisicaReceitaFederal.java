@@ -1,6 +1,6 @@
 package com.designpatterns.structural.proxy;
 
-public class PessoaFisicaReceitaFederal {
+public class PessoaFisicaReceitaFederal implements ReceitaFederalInterface{
 
     private String nome;
     private String cpf;
@@ -11,7 +11,23 @@ public class PessoaFisicaReceitaFederal {
         this.nome = "Joao";
         this.idade = 25;
         this.cpfAtivo = true;
-        Thread. sleep(5);
+        try {
+            Thread. sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("Pessoa fisica criada com sucesso!");
+    }
+
+    public boolean isCpfAtivo() {
+        return cpfAtivo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
     }
 }

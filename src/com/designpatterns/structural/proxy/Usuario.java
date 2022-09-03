@@ -19,10 +19,22 @@ public class Usuario {
     }
 
     public boolean verificaCPFAtivo() {
-        return this.pessoaFisica.CPFAtivo();
+        return this.pessoaFisica.isCpfAtivo();
     }
 
     public boolean verificaMaioridade() {
         return this.idade >= 18 && this.idade == this.pessoaFisica.getIdade();
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public int getIdade() {
+        return idade;
     }
 }
