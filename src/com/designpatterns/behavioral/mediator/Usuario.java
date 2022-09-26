@@ -11,7 +11,7 @@ public abstract class Usuario {
 
     public void setMediator(SalaDeChatMediatorInterface mediator) {
 
-        if (mediator != null)
+        if (this.mediator != null)
             this.mediator.removerUsuario(this);
 
         this.mediator = mediator;
