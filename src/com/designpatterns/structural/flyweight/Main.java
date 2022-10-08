@@ -9,9 +9,9 @@ public class Main {
         Random random = new Random();
         Plantacao plantacao = new Plantacao();
         for (int i = 0; i < iteracoes; i++) {
-            plantacao.addArvore(random.nextInt(500), random.nextInt(500), "Ipe", "Amarelo", "10");
-            plantacao.addArvore(random.nextInt(500), random.nextInt(500), "Palmeira", "Verde", "7");
-            plantacao.addArvore(random.nextInt(500), random.nextInt(500), "Jabuticabeira", "Roxa", "5");
+            plantacao.addArvore(random.nextInt(500), random.nextInt(500), "Ipe", "Amarelo", 10f);
+            plantacao.addArvore(random.nextInt(500), random.nextInt(500), "Palmeira", "Verde", 7f);
+            plantacao.addArvore(random.nextInt(500), random.nextInt(500), "Jabuticabeira", "Roxa", 5f);
         }
 
         System.out.println("Arvores");

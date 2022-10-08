@@ -7,23 +7,14 @@ public class Arvore {
 
     private int x;
     private int y;
-    private String nome;
-    private String cor;
-    private String alturaMaxima;
 
-    public Arvore(int x, int y, String nome, String cor, String alturaMaxima) {
+    private EspecieFlyweight flyweight;
+
+
+    public Arvore(int x, int y, EspecieFlyweight flyweight) {
         this.x = x;
         this.y = y;
-        this.nome = nome;
-        this.cor = cor;
-        this.alturaMaxima = alturaMaxima;
-    }
-
-    public List<Arvore> retornaArvore() {
-        Arvore arvore = new Arvore(this.x, this.y, this.nome, this.cor, this.alturaMaxima);
-        List<Arvore> arvores = new ArrayList<>();
-        arvores.add(arvore);
-        return arvores;
+        this.flyweight = flyweight;
     }
 
     @Override
@@ -31,9 +22,11 @@ public class Arvore {
         return "Arvore{" +
                 "x=" + x +
                 ", y=" + y +
-                ", nome='" + nome + '\'' +
-                ", cor='" + cor + '\'' +
-                ", alturaMaxima='" + alturaMaxima + '\'' +
+                ", especie=" + this.flyweight.retornaEspecie() +
                 '}';
+    }
+
+    public Arvore retornaArvore() {
+        return new Arvore(this.x, this.y, this.flyweight.retornaEspecie());
     }
 }
